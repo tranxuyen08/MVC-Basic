@@ -14,6 +14,7 @@ class Boostrap
       $controller = new $controllerName();
       if (method_exists($controller, $actionURL) == true) {
         $controller->$actionURL();
+        $controller->loadModel($controllerURL);
       } else {
         $this->error();
       }
@@ -25,5 +26,6 @@ class Boostrap
   public function error() {
     require_once __DIR__ . '/../controllers/error.php';
     $error = new MVCError();
+    $error->index();
   }
 }
