@@ -1,12 +1,14 @@
 <?php
 class View{
-  public function __construct()
+  public function render($name, $full = true)
   {
-    echo '<h3>' .__METHOD__. '</h3>';
-  }
-  public function render($name)
-  {
-    require_once 'views/' . $name . '.php';
-    // require_once 'views/index/index.php' ;
+    if($full ==true){
+      include_once('views/header.php');
+      require_once 'views/' . $name . '.php';
+      include_once('views/footer.php');
+
+    }else{
+      require_once 'views/' . $name . '.php';
+    }
   }
 }
