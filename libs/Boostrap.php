@@ -8,7 +8,7 @@ class Boostrap
 
     $controllerName = ucfirst($controllerURL);
 
-    $file = 'controllers/' . $controllerURL . '.php';
+    $file = CONTROLLER_PATH . $controllerURL . '.php';
     if (file_exists($file)) {
       require_once $file;
       $controller = new $controllerName();
@@ -24,7 +24,7 @@ class Boostrap
   }
 
   public function error() {
-    require_once __DIR__ . '/../controllers/error.php';
+    require_once CONTROLLER_PATH . 'error.php';
     $error = new MVCError();
     $error->index();
   }
