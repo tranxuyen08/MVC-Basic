@@ -2,8 +2,14 @@
 class Login extends Controller{
 
   public function index() {
+
     $this->view->render('login/index');
-    $this->loadModel('group');
+    echo '<pre>';
+    print_r ($_POST);
+    echo '</pre>';
+    echo '<pre>';
+    print_r ($this);
+    echo '</pre>';
   }
 
 }
