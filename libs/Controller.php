@@ -13,7 +13,7 @@ class Controller
     $modelName = ucfirst($name). '_Model';
     if (file_exists($path)) {
       require_once $path;
-      $this->db = new $modelName;
+      $this->db = new $modelName();
     }
   }
 }

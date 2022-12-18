@@ -12,8 +12,17 @@ define('ROOT_URL'       ,  '');
 define('PUBLIC_URL'     , ROOT_URL . DS . 'public' . DS);
 
 //===============DATABASE===================
-define('DB_HOST'        , 'localhost');
+define('DB_HOST'        , '127.0.0.1');
+define('DB_PORT'        , 8889); // 3306
 define('DB_USER'        , 'root');
-define('DB_PASSWORD'    , '');
-define('DB_name'        , 'manage_user');
+define('DB_PASSWORD'    , 'root');
+define('DB_NAME'        , 'banhang');
+define('DB_TABLE'        , 'user');
+
+// DB_CONNECTION=mysql
+// DB_HOST=127.0.0.1
+// DB_PORT=8889
+// DB_DATABASE=banhang
+// DB_USERNAME=root
+// DB_PASSWORD=root
 
