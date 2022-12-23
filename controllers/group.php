@@ -2,6 +2,8 @@
 require_once 'libs/Controller.php';
 class Group extends Controller{
   public function index() {
-    $this->view->render('group/index',false);
+    $this->view->render('group/index');
+    Session::init();
+    Session::destroy();
   }
 }

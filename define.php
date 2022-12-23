@@ -17,12 +17,6 @@ define('DB_PORT'        , 8889); // 3306
 define('DB_USER'        , 'root');
 define('DB_PASSWORD'    , 'root');
 define('DB_NAME'        , 'banhang');
-define('DB_TABLE'        , 'user');
+define('DB_TABLE'        , 'users');
 
-// DB_CONNECTION=mysql
-// DB_HOST=127.0.0.1
-// DB_PORT=8889
-// DB_DATABASE=banhang
-// DB_USERNAME=root
-// DB_PASSWORD=root
 
