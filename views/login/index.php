@@ -1,5 +1,8 @@
 <div class="content">
   <h3>Login</h3>
+  <?php
+    echo $error = !empty($this->errors) ? ($this->errors) : '';
+  ?>
   <form action="index.php?controller=login&action=index" method="POST" name="form-login" id="form-login">
     <div class="row">
       <p>User Name :</p>

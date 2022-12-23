@@ -12,12 +12,12 @@ class Model{
 			$params['username']	= DB_USER;
 			$params['password']	= DB_PASSWORD;
 			$params['database']	= DB_NAME;
-            $params['port']	= DB_PORT;
+			$params['port']	= DB_PORT;
 			$params['table']	= DB_TABLE;
 		}
 		$link = mysqli_connect($params['server'], $params['username'], $params['password'], $params['database'], $params['port']);
 		if(!$link){
-			die('Fail connect: ' . mysqli_errno($link));
+			die('Fail connect: ' . mysqli_connect_errno());
 		}else{
 			$this->connect 	= $link;
 			$this->database = $params['database'];
