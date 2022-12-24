@@ -3,7 +3,7 @@
   <?php
     echo $error = !empty($this->errors) ? ($this->errors) : '';
   ?>
-  <form action="index.php?controller=login&action=index" method="POST" name="form-login" id="form-login">
+  <form action="index.php?controller=user&action=login" method="POST" name="form-login" id="form-login">
     <div class="row">
       <p>User Name :</p>
       <input type="text" name="username" placeholder="Enter Your user Name">

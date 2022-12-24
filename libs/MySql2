@@ -1,0 +1,78 @@
+//1. Write a SQL statement to insert a record with your own value into the table countries against each columns.
+
+create table if not exists countries(
+  COUNTRY_ID varchar(255) NOT NULL UNIQUE PRIMARY KEY,
+  COUNTRY_NAME varchar(255) NOT NULL,
+  REGION_ID int NOT NULL
+)
+insert into countries value('c1', 'India', '1001');
+2. Write a SQL statement to insert one row into the table countries against the column country_id and country_name.
+
+INSERT INTO countries (country_id, country_name) VALUE ('c1', 'India');
+
+3. Write a SQL statement to create duplicate of countries table named country_new with all structure and data.
+
+CREATE TABLE IF NOT EXISTS countries_new SELECT * FROM countries;
+
+4. Write a SQL statement to insert NULL values against region_id column for a row of countries table.
+
+INSERT INTO countries (country_id,country_name,region_id) VALUE ('c1','India',NULL);
+
+5. Write a SQL statement to insert 3 rows by a single insert statement.
+
+
+INSERT INTO countries VALUE ('c1', 'India', '1'),('c1', 'VietNam', '2'),('c1', 'Indonesia', '3');
+
+6. Write a SQL statement insert rows from country_new table to countries table.
+
+INSERT INTO countries SELECT * FROM countries_new;
+
+7. Write a SQL statement to insert one row in jobs table to ensure that no duplicate value will be entered in the job_id column.
+
+CREATE TABLE IF NOT EXISTS jobs (
+  job_id INT NOT NULL UNIQUE,
+  job_title varchar(255) NOT NULL,
+  salatry INT(15)
+);
+INSERT INTO jobs VALUE(1, 'design', 15000000);
+
+9. Write a SQL statement to insert a record into the table countries to ensure that, a country_id and region_id combination will be entered once in the table.
+
+create table if not exists countries(
+  country_id varchar(255) NOT NULL UNIQUE PRIMARY KEY,
+  country_name varchar(255) NOT NULL,
+  region_id int NOT NULL
+  PRIMARY KEY (country_id, region_id);
+);
+INSERT INTO countries VALUE (1, 'VietNam', '1');
+
+10. Write a SQL statement to insert rows into the table countries in which the value of country_id column will be unique and auto incremented.
+
+
+create table if not exists countries(
+  country_id varchar(255) NOT NULL UNIQUE PRIMARY KEY AUTO_INCREMENT,
+  country_name varchar(255) NOT NULL,
+  region_id int NOT NULL
+);
+INSERT INTO countries(country_name, region_id) VALUE ('VietNam', '1');
+
+11. Write a SQL statement to insert records into the table countries to ensure that the country_id column will not contain any duplicate data and this will be automatically incremented and the column country_name will be filled up by 'N/A' if no value assigned for that column.
+
+create table if not exists countries(
+  country_id varchar(255) NOT NULL UNIQUE PRIMARY KEY AUTO_INCREMENT,
+  country_name varchar(255) NOT NULL DEFAULT 'N/A',
+  region_id int NOT NULL
+);
+
+12. Write a SQL statement to insert rows in the job_history table in which one column job_id is containing those values which are exists in job_id column of jobs table.
+
+//chua lam xong
+CREATE TABLE IF NOT EXISTS job_history (
+  job_id INT NOT NULL UNIQUE,
+  job_title varchar(255) NOT NULL,
+  salatry INT(15)
+)ENGINE=InnoDB;
+INSERT INTO jobs VALUE(1, 'design', 15000000);
+
+13. Write a SQL statement to insert rows into the table employees in which a set of columns department_id and manager_id contains a unique value and that combined values must have exists into the table departments.
+

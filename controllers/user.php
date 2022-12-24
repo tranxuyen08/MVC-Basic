@@ -1,10 +1,17 @@
 <?php
-class Login extends Controller
+class User extends Controller
 {
-
-  public function index()
+  public function __construct()
   {
-    echo Session::get('loggedIn');
+    parent::__construct();
+    Session::init();
+  }
+
+  public function login()
+  {
+    if (Session::get('loggedIn') == true) {
+      $this->redirect('group', 'index');
+    }
     if (isset($_POST['submit'])) {
       $username = $_POST['username'];
       $password = $_POST['password'];
@@ -19,17 +26,19 @@ class Login extends Controller
       //  $this->view->errors = $validate ->showErrors();
       // }
 
-      if($username == 'tranxuyen' & $password == 123123){
-        Session::init();
+      if ($username == 'tranxuyen' & $password == 123123) {
         Session::set('loggedIn', true);
-        header('location: index.php?controller=group&action=index');
-        exit();
+        $this->redirect('group', 'index');
         Session::destroy();
-
-      }else{
+      } else {
         echo 'error';
       }
     }
-    $this->view->render('login/index');
+    $this->view->render('user/login');
+  }
+  public function logout()
+  {
+    $this->view->render('user/logout');
+    Session::destroy();
   }
 }
