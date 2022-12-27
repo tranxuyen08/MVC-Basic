@@ -194,8 +194,7 @@ class Validate{
 	// Validate Exist record
 	private function validateExistRecord($element, $options){
 		$database = $options['database'];
-
-		$query	  = $options['query'];
+		$query = $options['query'];
 		if($database->isExist($query)==false){
 			$this->setError($element, 'record is not exist');
 		}

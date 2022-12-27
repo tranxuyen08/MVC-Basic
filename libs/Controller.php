@@ -1,10 +1,12 @@
 <?php
 class Controller
 {
-  public function __construct()
+  public $db;
+
+  public function __construct($model)
   {
     $this->view = new View();
-    $this->loadModel('login');
+    $this->loadModel($model);
   }
 
   public function loadModel($name)
@@ -21,3 +23,4 @@ class Controller
     exit();
   }
 }
+
