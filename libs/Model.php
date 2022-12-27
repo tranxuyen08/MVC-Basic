@@ -208,6 +208,9 @@ class Model{
 		if($query != null) {
 			$this->resultQuery = $this->query($query);
 		}
+		if (empty($this->resultQuery)) {
+			return false;
+		}
 		if(mysqli_num_rows($this->resultQuery ) > 0) return true;
 		return false;
 	}
