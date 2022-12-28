@@ -7,9 +7,8 @@ class Group extends Controller{
   }
 
   public function index(){
+    $this->view->items = $this->db->listItems();
     $this->view->render('group/index');
-    $list_products = $this->db->listItems();
-    var_dump($list_products);
   }
 
 }
