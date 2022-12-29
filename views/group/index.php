@@ -1,26 +1,36 @@
 <?php
 $xhtml = '';
-    if(!empty($this->items)){
-        foreach($this->items as $key => $value){;
-        $xhtml .= '<div class="row">
-                    <p class="w-10"> <input type="checkbox" name="Check-box[]" value="'.$value['id'].'"></p>
-                    <p>'.$value['name'].'</p>
-                    <p class="w-10">'.$value['id'].'</p>
-                    <p class="w-10">'.$value['amount'].'</p>
-                    <p class="w-10">'.$value['category_id'].'</p>
-                    <p class="w-10">'.$value['total'].'</p>
+if (!empty($this->items)) {
+    foreach ($this->items as $key => $value) {;
+        $xhtml .= '<div class="row" id="item-' . $value['id'] . '">
+                    <p class="w-10"> <input type="checkbox" name="Check-box[]" value="' . $value['id'] . '"></p>
+                    <p>' . $value['name'] . '</p>
+                    <p class="w-10">' . $value['id'] . '</p>
+                    <p class="w-10">' . $value['amount'] . '</p>
+                    <p class="w-10">' . $value['category_id'] . '</p>
+                    <p class="w-10">' . $value['total'] . '</p>
                     <p class="w-10">Member</p>
                     <p class="w-10 action">
                         <a href="">Edit</a>
-                        <a href="">Delete</a>
+                        <a href="javascript:deleteItem(' . $value['id'] . ')">Delete</a>
                     </p>
                   </div>';
-        }
     }
+}
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
-   <div class="content">
-        <h3>Group : List</h3>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="content">
+        <h3 class="title">Group : List</h3>
         <div class="list">
             <div class="row head">
                 <p class="w-10"> <input type="checkbox" name="check-all" id="check-all"></p>
@@ -35,3 +45,7 @@ $xhtml = '';
             <?php echo $xhtml ?>
         </div>
     </div>
+
+</body>
+
+</html>
