@@ -10,6 +10,7 @@ define('PUBLIC_PATH'    , ROOT_PATH . DS. 'public' .DS); //đường dẫn đế
 
 define('ROOT_URL'       ,  '');
 define('PUBLIC_URL'     , ROOT_URL . DS . 'public' . DS);
+define('VIEW_URL'     , ROOT_URL . DS . 'views' . DS);
 
 //===============DATABASE===================
 define('DB_HOST'        , '127.0.0.1');

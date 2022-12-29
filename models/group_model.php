@@ -3,6 +3,7 @@ class Group_Model extends Model{
   public function __construct()
   {
     parent::__construct();
+    $this->setTable('products');
   }
 
   public function listItems($option = null) {
@@ -12,5 +13,8 @@ class Group_Model extends Model{
 		$query		= implode(" ", $query);
 		$result		= $this->listRecord($query);
 		return $result;
+  }
+  public function deleteItem($id, $option = null) {
+   $this->delete(array($id));
   }
 }
