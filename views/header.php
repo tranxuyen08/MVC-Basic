@@ -32,8 +32,7 @@
   <link rel="stylesheet" href="<?php echo $cssURL ?>style.css">
   <script type="text/javascript" src="<?php echo $jsURL ?>jquery.js"></script>
   <script type="text/javascript" src="<?php echo $jsURL ?>custom.js"></script>
-  <?php echo $fileJs ?>
-  <?php echo $fileCss ?>
+  <?php echo $fileJs . $fileCss ?>
   <title>MVC</title>
 </head>
 

@@ -7,8 +7,8 @@ class Group extends Controller{
   }
 
   public function index(){
-    $this->view->js = array('group/js/group.js');
-    $this->view->css = array('group/css/group.css');
+    $this->view->js = array('group/js/group.js', 'group/js/jquery-ui-1.10.3.custom.min.js');
+    $this->view->css = array('group/css/jquery-ui-1.10.3.custom.min.css');
     $this->view->items = $this->db->listItems();
     $this->view->render('group/index');
   }
