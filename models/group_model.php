@@ -17,4 +17,5 @@ class Group_Model extends Model{
   public function deleteItem($id, $option = null) {
    $this->delete(array($id));
   }
+
 }

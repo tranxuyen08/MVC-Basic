@@ -9,9 +9,8 @@ if (!empty($this->items)) {
                     <p class="w-10">' . $value['amount'] . '</p>
                     <p class="w-10">' . $value['category_id'] . '</p>
                     <p class="w-10">' . $value['total'] . '</p>
-                    <p class="w-10">Member</p>
                     <p class="w-10 action">
-                        <a href="">Edit</a>
+                        <a href="javascript:editItem(' . $value['id'] . ')">Edit</a>
                         <a href="javascript:deleteItem(' . $value['id'] . ')">Delete</a>
                     </p>
                   </div>';
@@ -31,6 +30,9 @@ if (!empty($this->items)) {
 <body>
     <div class="content">
         <h3 class="title">Group : List</h3>
+        <div id="dialog-confirm" title="Thông báo!" style="display: none;">
+            <p>Bạn có chắc muốn xóa phần tử này hay không?</p>
+        </div>
         <div class="list">
             <div class="row head">
                 <p class="w-10"> <input type="checkbox" name="check-all" id="check-all"></p>
@@ -39,7 +41,6 @@ if (!empty($this->items)) {
                 <p class="w-10">Group Amount</p>
                 <p class="w-10">Group Category Id</p>
                 <p class="w-10">Group Total</p>
-                <p class="w-10">Member</p>
                 <p class="w-10 action">Action</p>
             </div>
             <?php echo $xhtml ?>
